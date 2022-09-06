@@ -1,0 +1,21 @@
+
+.mensaje-error{
+  color: red;
+  border-radius: 15px;
+  padding: 3px;
+  padding-left: 10px;
+  margin: 8px 10px;
+  opacity: 0;
+  transition: all linear 0.3s;
+  &.invalid{  
+    opacity: 1;
+
+  }
+}
+
+.btnRegistroAndLogin{
+  background-color: black;
+  color: rgb(184, 183, 183);
+  padding: 2px 5px 2px 5px;
+  border-radius: 5px;
+}

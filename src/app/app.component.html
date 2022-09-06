@@ -12,53 +12,57 @@
     <button type="button" (click)="menuLogin()" > Login </button>
   </div>
   
-  <form (ngSubmit)="registrarPersona()" #formularioRegistro='ngForm' [hidden]="btnRegistro" >
-    <h3> Registro </h3>
-    <!-- Nombre -->
-    <div>
-      <label for="nombre">Nombre: </label>
-      <input required name="name" type="text" id="name" [(ngModel)]="registro.name" >
-      <p> Completa el campo </p>
-    </div>
+  <div class="formulario">
 
-    <!-- Email -->
-    <div>
-      <label for="email"> Email: </label>
-      <input required  name="email" type="email" id="email" [(ngModel)]="registro.email">
-      <p> Completa el campo </p>
-    </div>
+    <form (ngSubmit)="registrarPersona()" #formularioRegistro='ngForm' [hidden]="btnRegistro" >
+      <h3> Registro </h3>
+      <!-- Nombre -->
+      <div>
+        <label for="nombre">Nombre: </label>
+        <input required name="name" type="text" id="name" #inputRegistroName="ngModel" [(ngModel)]="registro.name" >
+        <p class="mensaje-error" [class.invalid]="inputRegistroName.invalid" > Completa el campo </p>
+      </div>
 
-    <!-- Password -->
-    <div>
-      <label for="password"> Password: </label>
-      <input required  name="password" type="password" id="password" [(ngModel)]="registro.password">
-      <p> Completa el campo </p>
-    </div>
+      <!-- Email -->
+      <div>
+        <label for="email"> Email: </label>
+        <input required  name="email" type="email" id="email" #inputRegistroEmail="ngModel" [(ngModel)]="registro.email">
+        <p class="mensaje-error" [class.invalid]="inputRegistroEmail.invalid"  > Completa el campo </p>
+      </div>
 
-    <button [disabled]="formularioRegistro.invalid" type="submit" > Registrar </button>
-    
-  </form>
+      <!-- Password -->
+      <div>
+        <label for="password"> Password: </label>
+        <input required  name="password" type="password" id="password" #inputRegistroPassword="ngModel" [(ngModel)]="registro.password">
+        <p class="mensaje-error" [class.invalid]="inputRegistroPassword.invalid"  > Completa el campo </p>
+      </div>
 
-  <form (ngSubmit)="loginUser()" #fomularioLogin="ngForm" [hidden]="btnLogin">
-    <h3> Login </h3>
+      <button class="btnRegistroAndLogin" [disabled]="formularioRegistro.invalid" type="submit" > Registrar </button>
+      
+    </form>
 
-    <!-- Email -->
-    <div>
-      <label for="email"> Email: </label>
-      <input required  name="email" type="email" id="email" [(ngModel)]="login.email">
-      <p> Completa el campo </p>
-    </div>
+    <form (ngSubmit)="loginUser()" #fomularioLogin="ngForm" [hidden]="btnLogin">
+      <h3> Login </h3>
 
-    <!-- Password -->
-    <div>
-      <label for="password"> Password: </label>
-      <input required  name="password" type="password" id="password" [(ngModel)]="login.password">
-      <p> Completa el campo </p>
-    </div>
+      <!-- Email -->
+      <div>
+        <label for="email"> Email: </label>
+        <input required  name="email" type="email" id="email" #inputLoginEmail="ngModel" [(ngModel)]="login.email">
+        <p class="mensaje-error" [class.invalid]="inputLoginEmail.invalid" > Completa el campo </p>
+      </div>
 
-    <button type="submit"> Login </button>
+      <!-- Password -->
+      <div>
+        <label for="password"> Password: </label>
+        <input required  name="password" type="password" id="password" #inputLoginPassword="ngModel" [(ngModel)]="login.password">
+        <p class="mensaje-error" [class.invalid]="inputLoginPassword.invalid" >  Completa el campo </p>
+      </div>
 
-  </form>
+      <button class="btnRegistroAndLogin" [disabled]="fomularioLogin.invalid" type="submit"> Login </button>
+
+    </form>
+
+  </div>
 
 </body>
 </html>

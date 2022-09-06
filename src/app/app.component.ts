@@ -4,9 +4,10 @@ import { Component, NgModule } from '@angular/core';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: [ './app.component.scss' ]
 })
 export class AppComponent  {
+  // variables
   registro = {
     name: '',
     email: '',
@@ -16,10 +17,10 @@ export class AppComponent  {
     email: '',
     password: ''
   }
-
   btnRegistro = true;
   btnLogin = true;
 
+  // Funciones
   registrarPersona(){
     console.log(this.registro);
   }
