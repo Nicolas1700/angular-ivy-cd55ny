@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario basico</title>
+</head>
+<body>
+  <div>
+    <button type="button" (click)="menuRegistro()" > Registrarse </button>
+    <button type="button" (click)="menuLogin()" > Login </button>
+  </div>
+  
+  <form (ngSubmit)="registrarPersona()" #formularioRegistro='ngForm' [hidden]="btnRegistro" >
+    <h3> Registro </h3>
+    <!-- Nombre -->
+    <div>
+      <label for="nombre">Nombre: </label>
+      <input required name="name" type="text" id="name" [(ngModel)]="registro.name" >
+      <p> Completa el campo </p>
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label for="email"> Email: </label>
+      <input required  name="email" type="email" id="email" [(ngModel)]="registro.email">
+      <p> Completa el campo </p>
+    </div>
+
+    <!-- Password -->
+    <div>
+      <label for="password"> Password: </label>
+      <input required  name="password" type="password" id="password" [(ngModel)]="registro.password">
+      <p> Completa el campo </p>
+    </div>
+
+    <button [disabled]="formularioRegistro.invalid" type="submit" > Registrar </button>
+    
+  </form>
+
+  <form (ngSubmit)="loginUser()" #fomularioLogin="ngForm" [hidden]="btnLogin">
+    <h3> Login </h3>
+
+    <!-- Email -->
+    <div>
+      <label for="email"> Email: </label>
+      <input required  name="email" type="email" id="email" [(ngModel)]="login.email">
+      <p> Completa el campo </p>
+    </div>
+
+    <!-- Password -->
+    <div>
+      <label for="password"> Password: </label>
+      <input required  name="password" type="password" id="password" [(ngModel)]="login.password">
+      <p> Completa el campo </p>
+    </div>
+
+    <button type="submit"> Login </button>
+
+  </form>
+
+</body>
+</html>
