@@ -1,6 +1,37 @@
 
-.mensaje-error{
+.btnsRegistrarseLogin{
+  margin: auto 0;
+  text-align: center;
   color: red;
+}
+
+.btnS{
+  margin: 20px 30px;
+  padding: 5px 7px;
+  background-color: black;
+  color: white;
+  border-radius: 6px;
+  
+}
+
+
+.formulario{
+  padding: 10px 100px;
+  text-align: center;
+}
+
+.formularios{
+  
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 10px;
+  padding-bottom: 25px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.mensaje-error{
+  color: rgb(255, 255, 255);
   border-radius: 15px;
   padding: 3px;
   padding-left: 10px;
@@ -14,8 +45,8 @@
 }
 
 .btnRegistroAndLogin{
-  background-color: black;
-  color: rgb(184, 183, 183);
+  background-color: rgb(221, 211, 211);
+  color: rgb(0, 0, 0);
   padding: 2px 5px 2px 5px;
   border-radius: 5px;
 }
